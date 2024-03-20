@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
-import {Counter} from "../src/Counter.sol";
+import {GIVTokens} from "../src/GIVTokens.sol";
 import {Utils} from "./Utils.t.sol";
 
 contract BaseSetup is Utils {
-    Counter counter;
+    GIVTokens givTokens;
 
     address[] _users;
     address controller;
@@ -32,9 +32,7 @@ contract BaseSetup is Utils {
         vm.label(trent, "TRENT");
         vm.label(zero, "ZERO");
 
-        vm.startPrank(controller);
-        counter = new Counter();
-        vm.stopPrank();
+      
     }
 
     function test_basesetup_just_for_pass_in_converage() public {}
